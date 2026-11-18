@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Tutor Area</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Music Lesson Booking</h1>
+    <nav><a href="index.html">Pupils</a><a href="tutor.html" aria-current="page">Tutors</a></nav>
+</header>
+<main>
+    <p id="message" class="message" role="status"></p>
+
+    <section id="login">
+        <h2>Tutor login</h2>
+        <form id="login-form" class="form-row">
+            <label>Username <input id="username" autocomplete="username" required></label>
+            <label>Password <input id="password" type="password" autocomplete="current-password" required></label>
+            <button type="submit">Log in</button>
+        </form>
+    </section>
+
+    <div id="dashboard" hidden>
+        <section class="form-row">
+            <label>Day <select id="day"></select></label>
+            <button id="block-day" type="button">Block whole day</button>
+            <button id="unblock-day" type="button">Unblock whole day</button>
+            <button id="log-out" type="button" class="secondary">Log out</button>
+        </section>
+
+        <section>
+            <h2>Booked lessons</h2>
+            <ul id="booked-lessons"></ul>
+        </section>
+
+        <div class="columns">
+            <section>
+                <h2>Free slots</h2>
+                <ul id="available-slots"></ul>
+            </section>
+            <section>
+                <h2>Blocked slots</h2>
+                <ul id="blocked-slots"></ul>
+            </section>
+        </div>
+
+        <section>
+            <h2>Check bookings against the pupil level tracker</h2>
+            <button id="check-lessons" type="button">Run check</button>
+            <ul id="check-results"></ul>
+        </section>
+    </div>
+</main>
+<script src="api.js"></script>
+<script src="tutor.js"></script>
+</body>
+</html>

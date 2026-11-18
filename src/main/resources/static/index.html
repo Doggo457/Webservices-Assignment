@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Music Lesson Booking</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<header>
+    <h1>Music Lesson Booking</h1>
+    <nav><a href="index.html" aria-current="page">Pupils</a><a href="tutor.html">Tutors</a></nav>
+</header>
+<main>
+    <p id="message" class="message" role="status"></p>
+
+    <section>
+        <h2>Your tutor</h2>
+        <p id="tutor-name" class="tutor-name"></p>
+        <ul id="tutor-instruments"></ul>
+    </section>
+
+    <section>
+        <h2>Your details</h2>
+        <form id="pupil-details" class="form-row">
+            <label>Matriculation number <input id="matric" type="number" min="1" required></label>
+            <label>Name <input id="pupil-name" autocomplete="name" required></label>
+            <label>Instrument <select id="instrument"></select></label>
+        </form>
+    </section>
+
+    <section>
+        <h2>Book a lesson</h2>
+        <label>Day <select id="day"></select></label>
+        <p class="hint">Choose a free time to book a 30 minute lesson.</p>
+        <div id="available-slots" class="slot-grid"></div>
+    </section>
+
+    <section>
+        <h2>Your lessons</h2>
+        <button id="show-lessons" type="button">Show my lessons</button>
+        <ul id="my-lessons"></ul>
+    </section>
+</main>
+<script src="api.js"></script>
+<script src="pupil.js"></script>
+</body>
+</html>

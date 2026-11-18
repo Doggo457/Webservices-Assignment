@@ -1,0 +1,178 @@
+:root {
+    --background: #f4f5f7;
+    --surface: #ffffff;
+    --text: #1f2933;
+    --muted: #616e7c;
+    --accent: #3b5bdb;
+    --accent-dark: #2f4ac0;
+    --border: #d9dde3;
+    --success: #e6f4ea;
+    --success-text: #1e6b34;
+    --error: #fdecea;
+    --error-text: #a32a1f;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+body {
+    margin: 0;
+    font-family: system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+    background: var(--background);
+    color: var(--text);
+    line-height: 1.5;
+}
+
+header {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    background: var(--surface);
+    border-bottom: 1px solid var(--border);
+}
+
+h1 {
+    margin: 0;
+    font-size: 1.4rem;
+}
+
+h2 {
+    margin: 0 0 0.75rem;
+    font-size: 1.1rem;
+}
+
+nav a {
+    margin-left: 1rem;
+    color: var(--accent);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+nav a[aria-current="page"] {
+    text-decoration: underline;
+}
+
+main {
+    max-width: 960px;
+    margin: 0 auto;
+    padding: 1.5rem 1rem;
+}
+
+section {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1rem;
+}
+
+.columns {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1rem;
+}
+
+.form-row {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    gap: 1rem;
+}
+
+label {
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    font-size: 0.9rem;
+    color: var(--muted);
+}
+
+input, select {
+    min-width: 12rem;
+    padding: 0.45rem 0.6rem;
+    border: 1px solid var(--border);
+    border-radius: 6px;
+    font: inherit;
+    color: var(--text);
+    background: var(--surface);
+}
+
+button {
+    padding: 0.45rem 0.9rem;
+    border: none;
+    border-radius: 6px;
+    background: var(--accent);
+    color: #ffffff;
+    font: inherit;
+    cursor: pointer;
+}
+
+button:hover {
+    background: var(--accent-dark);
+}
+
+button.secondary {
+    background: var(--muted);
+}
+
+ul {
+    list-style: none;
+    margin: 0.75rem 0 0;
+    padding: 0;
+}
+
+li {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    padding: 0.4rem 0;
+    border-bottom: 1px solid var(--border);
+}
+
+li:last-child {
+    border-bottom: none;
+}
+
+.slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(5.5rem, 1fr));
+    gap: 0.5rem;
+}
+
+.tutor-name {
+    margin: 0;
+    font-weight: 600;
+}
+
+.hint {
+    color: var(--muted);
+    font-size: 0.9rem;
+}
+
+.message:empty {
+    display: none;
+}
+
+.message {
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+}
+
+.message.success {
+    background: var(--success);
+    color: var(--success-text);
+}
+
+.message.error {
+    background: var(--error);
+    color: var(--error-text);
+}
