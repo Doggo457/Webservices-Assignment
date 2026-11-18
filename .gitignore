@@ -1,0 +1,18 @@
+# Coursework documents - not part of the code repo
+report/
+*.docx
+*.pdf
+*.mp4
+*.mov
+*.mkv
+
+# Build output
+target/
+*.class
+
+# IDE and OS files
+.idea/
+.vscode/
+*.iml
+.DS_Store
+Thumbs.db
