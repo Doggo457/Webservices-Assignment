@@ -1,0 +1,20 @@
+package uk.ac.stir.cscu9yw.lessonbooking;
+
+import java.util.Map;
+import java.util.Optional;
+
+public record Tutor(String name, Map<String, GradeRange> instruments) {
+
+    public Optional<GradeRange> gradeRangeFor(String instrument) {
+        return Optional.ofNullable(instruments.get(instrument));
+    }
+
+    public record GradeRange(int lowestGrade, int highestGrade) {
+
+        public static final GradeRange ALL_GRADES = new GradeRange(Pupil.UNGRADED, 8);
+
+        public boolean includes(int grade) {
+            return grade >= lowestGrade && grade <= highestGrade;
+        }
+    }
+}

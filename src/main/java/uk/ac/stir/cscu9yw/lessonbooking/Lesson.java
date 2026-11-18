@@ -1,0 +1,20 @@
+package uk.ac.stir.cscu9yw.lessonbooking;
+
+import com.fasterxml.jackson.annotation.JsonFormat;
+import java.time.DayOfWeek;
+import java.time.LocalTime;
+import org.springframework.hateoas.server.core.Relation;
+
+@Relation(collectionRelation = "lessons")
+public record Lesson(
+        long id,
+        int matric,
+        String pupilName,
+        String instrument,
+        DayOfWeek day,
+        @JsonFormat(pattern = "HH:mm") LocalTime time) {
+
+    public Slot slot() {
+        return new Slot(day, time);
+    }
+}
