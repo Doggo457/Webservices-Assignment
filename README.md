@@ -6,6 +6,10 @@ A RESTful web service for booking one-to-one music lessons with a tutor, plus br
 
 You need JDK 17 or newer. Maven does not need to be installed because the Maven wrapper is included.
 
+On Windows the quickest way is to double-click `run.bat`. It compiles the service, starts it and opens the pupil and tutor pages.
+
+To run it by hand:
+
 ```
 mvnw.cmd spring-boot:run        (Windows)
 ./mvnw spring-boot:run          (macOS or Linux)
