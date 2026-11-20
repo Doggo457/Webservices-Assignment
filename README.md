@@ -32,6 +32,23 @@ Then open:
 
 The demo tutor login is username `anna`, password `scales2026`. Only a BCrypt hash of the password is stored, in `application.properties`.
 
+## Tests
+
+```
+mvnw.cmd test        (Windows)
+./mvnw test          (macOS or Linux)
+```
+
+There are 63 JUnit tests in three classes:
+
+| Class | What it tests |
+|---|---|
+| `LessonBookingServiceTest` | Every booking rule, blocking, cancelling and the tracker check |
+| `PupilLevelTrackerClientTest` | Reading tracker records and handling tracker errors, against a mock tracker server |
+| `LessonBookingApiTest` | HTTP status codes, HAL links, problem details and tutor security, through MockMvc |
+
+The tests run offline because the pupil level tracker is replaced with a mock, so they do not depend on the tracker's current data or its rate limit. `run.bat` runs them as part of the build and does not start the service if any fail.
+
 ## API
 
 All responses are HAL JSON with `_links`. Errors are returned as `application/problem+json` with a `detail` message.
